@@ -5,14 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style src="style.css"></style>
+    <link rel="stylesheet" href="style.css">
     <script src="Game.js" defer></script>
 </head>
 <body>
     <h1>Rock Paper Scissors Game</h1>
-    <input type="text" id="user-input">
-    <input type="submit" id="submit" onclick="playRound()">
-    <p id="text"></p>
-    <p id="result"></p>
+<div class="main">
+<!-- *** First container for user intput ***** -->
+    <div id="user-input">
+        <div id="user-selects">
+            <p>choose rounds number</p>
+            <input id="round-nbr"type="number" min="1" max="10">
+        </div>
+
+        <div>
+            <button class="btn" value="Rock">Rock</button>
+            <button class="btn" value="Paper">Paper</button>
+            <button class="btn" value="Scissors">Scissors</button>
+        </div>
+    </div>
+
+<!-- *** Second container for Score result ***** -->
+    <div id="score">
+        <span>Player 1</span>
+        <span></span>
+        <span>Computer</span>
+        <span></span>
+
+    </div>
+
+<!-- *** Third  container for displaying the WINNER ***** -->
+    <div id="display-result">
+        <p></p>
+        <p></p>
+        <span id="winner"></span>
+    </div>
+</div>
 </body>
 </html>

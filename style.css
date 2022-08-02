@@ -1,3 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Fenix&display=swap');
 body{
-    background-color: rgb(114, 228, 190);
+    background-color: rgb(146, 179, 168);
+    margin: 0px;
+    padding: 0px;
+}
+h1{ 
+    text-align: center;
+    font-family: 'Fenix', serif;
+}
+.main{border: dotted black 4px;
+    display: grid;
+    grid-template-areas:"header1 header2"
+                        "footer footer" ;
+}
+
+/* Styling the first container  */
+#user-input{ border: solid 2px red;
+    width: 350px;
+    padding: 15px;
+    text-align: center;
+    align-items: center;
+    grid-area: header1;
+    margin-left: 50px;
+}
+#user-selects >p{
+    font-size: 20pt;
+    font-weight: 600;
+    margin: 0%;
+    padding: 5px;
+    display: inline-block;
+}
+#round-nbr{
+    width: 40px;
+    height: 15px;
+    padding: 3px;
+    display: inline;
+    margin: 0px auto 5px auto;
+    border-radius: 4px;
+}
+.btn{
+    border-radius: 3px;
+    padding: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+    background-color: yellowgreen;
+}
+
+/* Styling the second container  */
+#score{ border: solid 1px black;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 210px;
+    height: 110px;
+    grid-area: header2;
+}
+#score > span{
+    background-color: yellow;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 900;
+    width: 100px;
+    height: 50px;
+    margin: 2px 2px;
+    border-radius: 5px;
+}
+
+#display-result{
+    border: solid 2px black;
+    width: 600px;
+    height: 300px;
+    font-size: 24px;
+    font-weight: 900;
+    font-family: sans-serif;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 4px auto;
+}
+#winner{
+    text-align: center;
+    justify-content: center;
 }
