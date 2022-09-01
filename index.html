@@ -4,42 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock-Paper-Scissors</title>
     <link rel="stylesheet" href="style.css">
     <script src="Game.js" defer></script>
+    <script src="https://kit.fontawesome.com/3d7ad65c26.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Rock Paper Scissors Game</h1>
-<div class="main">
-<!-- *** First container for user intput ***** -->
-    <div id="user-input">
-        <div id="user-selects">
-            <p>choose rounds number</p>
-            <input id="round-nbr"type="number" min="1" max="10">
+    <div class="main">
+        <!-- *** First container for user intput ***** -->
+        <div id="user-input">
+            <div id="user-selects">
+                <p>choose rounds number</p>
+             <input id="round-nbr"type="number" min="1" max="10" value="5">
+            </div>
+            <div class="buttons">
+                <button class="btn" value="Rock">
+                    <img src="rock-paper-scissors-icon-3.jpg" width="100" height="100" alt="Rock">
+                </button>
+                <button class="btn" value="Paper">
+                    <img src="rock-paper-scissors-icon-2.jpg" width="100" height="100" alt="Paper">
+                </button>
+                <button class="btn" value="Scissors">
+                    <img src="rock-paper-scissors-icon-4.jpg" width="100" height="100" alt="Scissors">
+                </button>
+            </div>
+        </div> 
+            <!-- *** Second container for Score result ***** -->
+        <div id="score-display">
+            <span id="player"   class="name">Player 1</span>
+            <span id="computer" class="name">Computer</span>
+            <span class="score">0</span>
+            <span class="score">0</span>
+        </div> 
+            <!-- *** Third  container for displaying the WINNER ***** -->
+        <div id="display-result">
+            <p></p>
+            <p></p>
+            <span id="winner"></span>
         </div>
-
-        <div>
-            <button class="btn" value="Rock">Rock</button>
-            <button class="btn" value="Paper">Paper</button>
-            <button class="btn" value="Scissors">Scissors</button>
-        </div>
     </div>
-
-<!-- *** Second container for Score result ***** -->
-    <div id="score">
-        <span>Player 1</span>
-        <span></span>
-        <span>Computer</span>
-        <span></span>
-
-    </div>
-
-<!-- *** Third  container for displaying the WINNER ***** -->
-    <div id="display-result">
-        <p></p>
-        <p></p>
-        <span id="winner"></span>
-    </div>
-</div>
+    <footer>
+        Copyright&copy;2022 Abd-enour  
+        <a href="https://github.com/Abd-enour" target="_blank">
+          <i class="fa-brands fa-github" id="github-logo"></i>
+        </a>
+      </footer>
 </body>
 </html>
