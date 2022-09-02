@@ -5,9 +5,19 @@
     box-sizing: border-box;
 }
 body{
-    background-color: black;
+    background-color: #7e5858;
     margin: 0px;
     padding: 0px;
+}
+h1{ font-family: 'Fenix';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 15vh;
+    background-color: #7e5858;
+    letter-spacing: 1.2px;
+    font-size: 3em;
 }
 .main{
     background-color: yellow;
@@ -44,7 +54,7 @@ body{
 .btn{
     border-radius: 3px;
     padding: 5px;
-    margin-left: 5px;
+    margin: 15px;
     cursor: pointer;
     background-color: yellowgreen;
 }
@@ -77,8 +87,6 @@ body{
     font-weight: bold;
     font-size: 28px;
 }
-
-
 #display-result{
     height: 155px;
     font-size: 24px;
@@ -88,6 +96,32 @@ body{
     justify-content: center;
     align-items: center;
     margin: 4px auto;
+    background-color: white;
+    width: 400px;
+    color: white;
+    display: flex;
+}
+.anim-player{
+    animation: moveLeftToRight 2s linear forwards;
+}
+.anim-computer{
+    animation: moveRightToLeft 2s linear forwards;
+}
+@keyframes moveLeftToRight {
+    0%{
+        transform: translate(-100px);
+    }
+    100%{
+        transform: translate(0px);
+    }
+}
+@keyframes moveRightToLeft{
+    0%{
+        transform: translate(100px);
+    }
+    100%{
+        transform: translate(0px);
+    }
 }
 #winner{
     text-align: center;
