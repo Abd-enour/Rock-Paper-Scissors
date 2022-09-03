@@ -87,7 +87,7 @@ h1{ font-family: 'Fenix';
     font-weight: bold;
     font-size: 28px;
 }
-#display-result{
+#display-result{ position: relative;
     height: 155px;
     font-size: 24px;
     font-weight: 900;
@@ -100,28 +100,45 @@ h1{ font-family: 'Fenix';
     width: 400px;
     color: white;
     display: flex;
+    background-color: #041f1f;
 }
 .anim-player{
-    animation: moveLeftToRight 2s linear forwards;
+    animation: moveLeftToRight 1s linear forwards;
 }
 .anim-computer{
-    animation: moveRightToLeft 2s linear forwards;
+    animation: moveRightToLeft 1s linear forwards;
 }
 @keyframes moveLeftToRight {
     0%{
-        transform: translate(-100px);
+        left: 5px;
     }
     100%{
-        transform: translate(0px);
+        left: 95px;
     }
 }
 @keyframes moveRightToLeft{
     0%{
-        transform: translate(100px);
+        right: 5px;
     }
     100%{
-        transform: translate(0px);
+        right: 95px;
     }
+}
+#player-choice{
+    background-color: #3ee540;
+    border-radius: 10px;
+    margin-left: 7px;
+    position: absolute;
+    top: 27px;
+    left: 5px;
+}
+#computer-choice{
+    background-color: aqua;
+    border-radius: 10px;
+    margin-left: 7px;
+    position: absolute;
+    top: 27px;
+    right: 5px;
 }
 #winner{
     text-align: center;
