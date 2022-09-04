@@ -1,18 +1,21 @@
 let userName=prompt("what is your name:","name");
-let roundNbr=prompt("how many rounds would you like to play?")
+let roundNbr=prompt("how many rounds would you like to play?","between 1 and 10");
 let player=document.getElementById("player");
 let btn=document.querySelectorAll(".buttons");
 let main =document.getElementsByClassName("main");
 let playerChoice=document.getElementById("player-choice");
 let computerChoice=document.getElementById("computer-choice");
+let score=document.getElementsByClassName("score");
+let playerScore=score[0];   
+let computerScore=score[1]; 
+let output=document.getElementById("whoWon");
 
 userName===""?player.textContent=player.textContent:player.textContent=userName.toUpperCase();
 btn.forEach((button) => {button.addEventListener("click",playRound)});
 
 let round=0;
-function playRound(evt) { 
-    console.log(round);
-    if(round <= Number(roundNbr)){
+function playRound(evt) {
+    if(round < Number(roundNbr)){
     computerChoice.classList.remove("anim-computer");
     playerChoice.classList.remove("anim-player");
     let user =evt.target.value;
@@ -51,10 +54,6 @@ function playRound(evt) {
             },20);
         }
     
-let output=document.getElementById("whoWon");
-let score=document.getElementsByClassName("score");
-let playerScore=score[0];   
-let computerScore=score[1]; 
     let i=Number(playerScore.textContent);
     let j=Number(computerScore.textContent);
     if (randomItem===user) { 
@@ -90,13 +89,13 @@ let computerScore=score[1];
             computerScore.textContent=j; 
             return output.innerHTML=`You lose! ${randomItem} beats ${user}`;
       }
-    }else if(round > Number(roundNbr)){
-        if ( Number(playerScore.textContent) < Number(computerScore.textContent)) {
+    }else if(round >= Number(roundNbr)){
+        if ( Number(score[0].textContent) < Number(score[1].textContent)){
            return output.textContent="computer wins";
-        }else if (Number(playerScore.textContent) === Number(computerScore.textContent)){
+        }else if (Number(score[0].textContent) === Number(score[1].textContent)){
            return output.textContent="draw";
         }else{
-           return output.textContent="${userName} wins"
+           return output.textContent=`${userName} wins`;
         }
     }
 }
