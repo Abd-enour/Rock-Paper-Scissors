@@ -1,5 +1,5 @@
-let userName=prompt("what is your name:","name");
-let roundNbr=prompt("how many rounds would you like to play?","between 1 and 10");
+let userName=document.getElementById("playerName").value;
+let roundNbr=document.getElementById("select-round");
 let player=document.getElementById("player");
 let btn=document.querySelectorAll(".buttons");
 let main =document.getElementsByClassName("main");
@@ -10,12 +10,13 @@ let playerScore=score[0];
 let computerScore=score[1]; 
 let output=document.getElementById("whoWon");
 
-userName===""?player.textContent=player.textContent:player.textContent=userName.toUpperCase();
+// userName===""?player.textContent=player.textContent:player.textContent=userName.toUpperCase();
 btn.forEach((button) => {button.addEventListener("click",playRound)});
 
 let round=0;
 function playRound(evt) {
-    if(round < Number(roundNbr)){
+    roundNbr.setAttribute('disabled','');
+    if(round < roundNbr.value){
     computerChoice.classList.remove("anim-computer");
     playerChoice.classList.remove("anim-player");
     let user =evt.target.value;
@@ -89,7 +90,7 @@ function playRound(evt) {
             computerScore.textContent=j; 
             return output.innerHTML=`You lose! ${randomItem} beats ${user}`;
       }
-    }else if(round >= Number(roundNbr)){
+    }else if(round >= roundNbr.value){
         if ( Number(score[0].textContent) < Number(score[1].textContent)){
            return output.textContent="computer wins";
         }else if (Number(score[0].textContent) === Number(score[1].textContent)){
