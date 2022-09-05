@@ -61,51 +61,47 @@ function playRound(evt) {
     let i=Number(playerScore.textContent);
     let j=Number(computerScore.textContent);
     if (randomItem===user) { 
-        return output.innerHTML=`draw, you both choose ${randomItem}`;
         }else if (randomItem==="Rock" && user ==="Scissors") {
             j++;
             round++;
             computerScore.textContent=j;
-            return output.innerHTML=`You Lose! ${randomItem} beats ${user}`;
         }else if (randomItem==="Rock" && user ==="Paper") { 
             i++;
             round++;
             playerScore.textContent=i;
-            return output.innerHTML=`You Win! ${user} beats ${randomItem}`;
         }else if (randomItem==="Paper" && user ==="Rock") {
             j++;
             round++;
             computerScore.textContent=j;
-            return output.innerHTML=`You lose! ${randomItem} beats ${user}`;
         }else if (randomItem==="Paper" && user ==="Scissors") { 
             i++;
             round++;
             playerScore.textContent=i;
-            return output.innerHTML=`You Win! ${user} beats ${randomItem}`;
         }else if (randomItem==="Scissors" && user ==="Rock") { 
             i++;
             round++;
             playerScore.textContent=i;
-            return output.innerHTML=`You Win! ${user} beats ${randomItem}`;
         }else if (randomItem==="Scissors" && user ==="Paper") {
             j++;
             round++;
             computerScore.textContent=j; 
-            return output.innerHTML=`You lose! ${randomItem} beats ${user}`;
       }
     }else if(round >= roundNbr.value){
         if ( Number(score[0].textContent) < Number(score[1].textContent)){
             displayResult.innerHTML="";
-            createResetBtn();
-           return output.textContent="computer wins";
+            displayResult.textContent=`YOU LOST`;
+            displayResult.style.fontSize="45px";
+           createResetBtn();
         }else if (Number(score[0].textContent) === Number(score[1].textContent)){
             displayResult.innerHTML="";
-            createResetBtn();
-            return output.textContent="draw";
+            displayResult.textContent=` DRAW`;
+            displayResult.style.fontSize="45px";
+             createResetBtn();
         }else{
             displayResult.innerHTML="";
+            displayResult.textContent=`${userName.value} YOU WIN`;
+            displayResult.style.fontSize="45px";
             createResetBtn();
-           return output.textContent=`${userName.value} wins`;
         }
     }
 }
@@ -114,7 +110,9 @@ function createResetBtn(){
     resetBtn.setAttribute('type','submit');
     resetBtn.setAttribute('id','playAgain');
     resetBtn.textContent="Play Again";
-    displayResult.appendChild(resetBtn);
+    output.appendChild(resetBtn);
+    let input=document.querySelectorAll('input');
+    input.forEach((inp)=>inp.setAttribute('disabled',''))
     resetBtn.onclick=()=>{
         resetBtn.remove();
         location.reload();
