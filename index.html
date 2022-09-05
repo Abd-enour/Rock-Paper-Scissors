@@ -19,8 +19,8 @@
                 <input type="text" id="playerName" placeholder="Your Name">
             </label>
             <label for="select-round">
-                For how many rounds would you like to play?
-                <input type="number"id="select-round" max="10" min="1" placeholder="Number">
+                How many rounds would you like to play?
+                <input type="number"id="select-round" max="10" min="1" placeholder="Number" value="5">
             </label>
             <div class="buttons">
                 <input type="image" class="btn" value="Rock" src="rock-paper-scissors-icon-3.jpg" width="100" height="100" alt="Rock">
@@ -37,9 +37,14 @@
         </div> 
             <!-- *** Third  container for displaying the WINNER ***** -->
         <div id="display-result">
-            <p id="player-choice"></p>
-            <p id="computer-choice"></p>
-            <!-- <span id="winner"></span> -->
+            <div id="playerSide">PLAYER</div>
+            <div id="computerSide">COMPUTER</div>
+            <p id="player-choice">
+                <i class="fa-solid fa-question" width="100"></i>
+            </p>
+            <p id="computer-choice">
+                <i class="fa-solid fa-question" width="100"></i>
+            </p>
         </div>
         <div id="whoWon"></div>
     </div>

@@ -1,4 +1,4 @@
-let userName=document.getElementById("playerName").value;
+let userName=document.getElementById("playerName");
 let roundNbr=document.getElementById("select-round");
 let player=document.getElementById("player");
 let btn=document.querySelectorAll(".buttons");
@@ -9,12 +9,15 @@ let score=document.getElementsByClassName("score");
 let playerScore=score[0];   
 let computerScore=score[1]; 
 let output=document.getElementById("whoWon");
+let displayResult=document.getElementById('display-result');
 
-// userName===""?player.textContent=player.textContent:player.textContent=userName.toUpperCase();
 btn.forEach((button) => {button.addEventListener("click",playRound)});
 
 let round=0;
 function playRound(evt) {
+    player.textContent= userName.value===""?"PLAYER":userName.value.toUpperCase();
+    player.textContent.toUpperCase();
+    userName.setAttribute('disabled','');
     roundNbr.setAttribute('disabled','');
     if(round < roundNbr.value){
     computerChoice.classList.remove("anim-computer");
@@ -92,11 +95,28 @@ function playRound(evt) {
       }
     }else if(round >= roundNbr.value){
         if ( Number(score[0].textContent) < Number(score[1].textContent)){
+            displayResult.innerHTML="";
+            createResetBtn();
            return output.textContent="computer wins";
         }else if (Number(score[0].textContent) === Number(score[1].textContent)){
-           return output.textContent="draw";
+            displayResult.innerHTML="";
+            createResetBtn();
+            return output.textContent="draw";
         }else{
-           return output.textContent=`${userName} wins`;
+            displayResult.innerHTML="";
+            createResetBtn();
+           return output.textContent=`${userName.value} wins`;
         }
+    }
+}
+function createResetBtn(){
+    let resetBtn =document.createElement("button");
+    resetBtn.setAttribute('type','submit');
+    resetBtn.setAttribute('id','playAgain');
+    resetBtn.textContent="Play Again";
+    displayResult.appendChild(resetBtn);
+    resetBtn.onclick=()=>{
+        resetBtn.remove();
+        location.reload();
     }
 }
