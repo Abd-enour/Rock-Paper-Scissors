@@ -157,6 +157,27 @@ h1{ font-family: 'Fenix';
         right: 85px;
     }
 }
+@media only screen and (max-width:375px){
+    #display-result{
+        width: 370px;
+    }
+    @keyframes moveRightToLeft {
+        0%{
+            right:5px;
+        }
+        100%{
+            right: 60px;
+        }
+    }
+    @keyframes moveLeftToRight {
+        0%{
+            left:5px;
+        }
+        100%{
+            left: 60px;
+        }
+    }
+}
 #player-choice{
     background-color: #3ee540;
     border-radius: 10px;
